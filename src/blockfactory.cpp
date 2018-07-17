@@ -289,7 +289,7 @@ static bool ProcessRewardBlock(const CBlock* pblock, const CChainParams& chainpa
     CTxDestination ServerPylonDest = CBitcoinAddress(serverpylon).Get();
     CScript pylonCScript = GetScriptForDestination(ServerPylonDest);
 
-    if (pblock->vtx[0].vout[0].scriptPubKey != pylonCScript) {
+    if (pblock->vtx[0]->vout[0].scriptPubKey != pylonCScript) {
     LogPrintf("RewardBlock: Address reward not match");
     return false;
      }else{
